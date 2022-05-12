@@ -1,12 +1,52 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-class Home extends StatelessWidget {
+import 'package:thefruityshaker/components/cards.dart';
+import 'constants.dart' as Constants;
+import 'pages/home_page.dart';
+import 'pages/cocktail_page.dart';
+import 'pages/fruit_page.dart';
+import 'pages/about_page.dart';
+import 'pages/error_page.dart';
+
+class Home extends StatefulWidget {
   String title;
+
   Home({Key? key, required this.title}) : super(key: key);
 
   @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  int _selectedIndex = 0;
+  late Widget child;
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
+
+    switch (_selectedIndex) {
+      //navigation pour la ✨bottom nav bar✨
+      case 0:
+        child = HomeWidget();
+        break;
+      case 1:
+        child = CocktailWidget();
+        break;
+      case 2:
+        child = FruitWidget();
+        break;
+      case 3:
+        child = AboutWidget();
+        break;
+    }
+
     return Scaffold(
       backgroundColor: const Color(0xffD3D0CB),
       appBar: AppBar(
@@ -16,7 +56,7 @@ class Home extends StatelessWidget {
             //Do some other shit
           },
         ),
-        title: Text(title),
+        title: Text(widget.title),
         titleTextStyle: Theme.of(context).textTheme.headline6,
         centerTitle: false,
         backgroundColor: const Color(0xffF6F5F4),
@@ -54,316 +94,10 @@ class Home extends StatelessWidget {
           ),
         ],
         elevation: 10,
+        currentIndex: _selectedIndex,
+        onTap: _onItemTapped,
       ),
-      body: Center(
-        child: SingleChildScrollView(
-          scrollDirection: Axis.vertical,
-          child: Wrap(
-            //scrollDirection: Axis.vertical,
-            //mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Container(
-                  child: Column(
-                    children: [
-                      Padding(
-                        //padding: const EdgeInsets.all(8.0),
-                        padding: const EdgeInsets.only(top: 17),
-                        child: Container(
-                          height: 85,
-                          width: 93,
-                          decoration: const BoxDecoration(
-                            color: Colors.grey,
-                            borderRadius: BorderRadius.all(Radius.circular(15)),
-                          ),
-                        ),
-                      ),
-                      const Text("BARK"),
-                    ],
-                  ),
-                  width: 131,
-                  height: 148,
-                  decoration: const BoxDecoration(
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey,
-                        spreadRadius: 5,
-                        blurRadius: 7,
-                        offset: Offset(0, 3),
-                      ),
-                    ],
-                    color: Color(0xffF6F5F4),
-                    borderRadius: BorderRadius.all(Radius.circular(15)),
-                  ),
-                ),
-              ),
-
-
-
-//répétion pour tester le wrap
-              Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Container(
-                  child: Column(
-                    children: [
-                      Padding(
-                        //padding: const EdgeInsets.all(8.0),
-                        padding: const EdgeInsets.only(top: 17),
-                        child: Container(
-                          height: 85,
-                          width: 93,
-                          decoration: const BoxDecoration(
-                            color: Colors.grey,
-                            borderRadius: BorderRadius.all(Radius.circular(15)),
-                          ),
-                        ),
-                      ),
-                      const Text("BARK"),
-                    ],
-                  ),
-                  width: 131,
-                  height: 148,
-                  decoration: const BoxDecoration(
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey,
-                        spreadRadius: 5,
-                        blurRadius: 7,
-                        offset: Offset(0, 3),
-                      ),
-                    ],
-                    color: Color(0xffF6F5F4),
-                    borderRadius: BorderRadius.all(Radius.circular(15)),
-                  ),
-                ),
-              ),
-
-              Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Container(
-                  child: Column(
-                    children: [
-                      Padding(
-                        //padding: const EdgeInsets.all(8.0),
-                        padding: const EdgeInsets.only(top: 17),
-                        child: Container(
-                          height: 85,
-                          width: 93,
-                          decoration: const BoxDecoration(
-                            color: Colors.grey,
-                            borderRadius: BorderRadius.all(Radius.circular(15)),
-                          ),
-                        ),
-                      ),
-                      const Text("BARK"),
-                    ],
-                  ),
-                  width: 131,
-                  height: 148,
-                  decoration: const BoxDecoration(
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey,
-                        spreadRadius: 5,
-                        blurRadius: 7,
-                        offset: Offset(0, 3),
-                      ),
-                    ],
-                    color: Color(0xffF6F5F4),
-                    borderRadius: BorderRadius.all(Radius.circular(15)),
-                  ),
-                ),
-              ),
-
-              Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Container(
-                  child: Column(
-                    children: [
-                      Padding(
-                        //padding: const EdgeInsets.all(8.0),
-                        padding: const EdgeInsets.only(top: 17),
-                        child: Container(
-                          height: 85,
-                          width: 93,
-                          decoration: const BoxDecoration(
-                            color: Colors.grey,
-                            borderRadius: BorderRadius.all(Radius.circular(15)),
-                          ),
-                        ),
-                      ),
-                      const Text("BARK"),
-                    ],
-                  ),
-                  width: 131,
-                  height: 148,
-                  decoration: const BoxDecoration(
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey,
-                        spreadRadius: 5,
-                        blurRadius: 7,
-                        offset: Offset(0, 3),
-                      ),
-                    ],
-                    color: Color(0xffF6F5F4),
-                    borderRadius: BorderRadius.all(Radius.circular(15)),
-                  ),
-                ),
-              ),
-
-              Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Container(
-                  child: Column(
-                    children: [
-                      Padding(
-                        //padding: const EdgeInsets.all(8.0),
-                        padding: const EdgeInsets.only(top: 17),
-                        child: Container(
-                          height: 85,
-                          width: 93,
-                          decoration: const BoxDecoration(
-                            color: Colors.grey,
-                            borderRadius: BorderRadius.all(Radius.circular(15)),
-                          ),
-                        ),
-                      ),
-                      const Text("BARK"),
-                    ],
-                  ),
-                  width: 131,
-                  height: 148,
-                  decoration: const BoxDecoration(
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey,
-                        spreadRadius: 5,
-                        blurRadius: 7,
-                        offset: Offset(0, 3),
-                      ),
-                    ],
-                    color: Color(0xffF6F5F4),
-                    borderRadius: BorderRadius.all(Radius.circular(15)),
-                  ),
-                ),
-              ),
-
-              Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Container(
-                  child: Column(
-                    children: [
-                      Padding(
-                        //padding: const EdgeInsets.all(8.0),
-                        padding: const EdgeInsets.only(top: 17),
-                        child: Container(
-                          height: 85,
-                          width: 93,
-                          decoration: const BoxDecoration(
-                            color: Colors.grey,
-                            borderRadius: BorderRadius.all(Radius.circular(15)),
-                          ),
-                        ),
-                      ),
-                      const Text("BARK"),
-                    ],
-                  ),
-                  width: 131,
-                  height: 148,
-                  decoration: const BoxDecoration(
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey,
-                        spreadRadius: 5,
-                        blurRadius: 7,
-                        offset: Offset(0, 3),
-                      ),
-                    ],
-                    color: Color(0xffF6F5F4),
-                    borderRadius: BorderRadius.all(Radius.circular(15)),
-                  ),
-                ),
-              ),
-
-              Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Container(
-                  child: Column(
-                    children: [
-                      Padding(
-                        //padding: const EdgeInsets.all(8.0),
-                        padding: const EdgeInsets.only(top: 17),
-                        child: Container(
-                          height: 85,
-                          width: 93,
-                          decoration: const BoxDecoration(
-                            color: Colors.grey,
-                            borderRadius: BorderRadius.all(Radius.circular(15)),
-                          ),
-                        ),
-                      ),
-                      const Text("BARK"),
-                    ],
-                  ),
-                  width: 131,
-                  height: 148,
-                  decoration: const BoxDecoration(
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey,
-                        spreadRadius: 5,
-                        blurRadius: 7,
-                        offset: Offset(0, 3),
-                      ),
-                    ],
-                    color: Color(0xffF6F5F4),
-                    borderRadius: BorderRadius.all(Radius.circular(15)),
-                  ),
-                ),
-              ),
-
-              Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Container(
-                  child: Column(
-                    children: [
-                      Padding(
-                        //padding: const EdgeInsets.all(8.0),
-                        padding: const EdgeInsets.only(top: 17),
-                        child: Container(
-                          height: 85,
-                          width: 93,
-                          decoration: const BoxDecoration(
-                            color: Colors.grey,
-                            borderRadius: BorderRadius.all(Radius.circular(15)),
-                          ),
-                        ),
-                      ),
-                      const Text("BARK"),
-                    ],
-                  ),
-                  width: 131,
-                  height: 148,
-                  decoration: const BoxDecoration(
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey,
-                        spreadRadius: 5,
-                        blurRadius: 7,
-                        offset: Offset(0, 3),
-                      ),
-                    ],
-                    color: Color(0xffF6F5F4),
-                    borderRadius: BorderRadius.all(Radius.circular(15)),
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
+      body: child,
     );
   }
 }
