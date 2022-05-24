@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import 'package:thefruityshaker/components/cards.dart';
+//import 'package:thefruityshaker/components/cards.dart';
 import 'constants.dart' as Constants;
 import 'pages/home_page.dart';
 import 'pages/cocktail_page.dart';
 import 'pages/fruit_page.dart';
 import 'pages/about_page.dart';
-import 'pages/error_page.dart';
+//import 'pages/error_page.dart';
 
 class Home extends StatefulWidget {
-  String title;
+  final String title;
 
-  Home({Key? key, required this.title}) : super(key: key);
+  const Home({Key? key, required this.title}) : super(key: key);
 
   @override
   State<Home> createState() => _HomeState();
@@ -50,12 +50,12 @@ class _HomeState extends State<Home> {
     return Scaffold(
       backgroundColor: const Color(0xffD3D0CB),
       appBar: AppBar(
-        leading: IconButton(
+        /*leading: IconButton(
           icon: SvgPicture.asset("assets/icons/back_arrow.svg"),
           onPressed: () {
             //Do some other shit
           },
-        ),
+        ),*/
         title: Text(widget.title),
         titleTextStyle: Theme.of(context).textTheme.headline6,
         centerTitle: false,

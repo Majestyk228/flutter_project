@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../pages/cocktail_details_page.dart';
+
 class CardCustom extends StatelessWidget {
   final String title;
 
@@ -9,7 +11,11 @@ class CardCustom extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        print("appuie sur "+title);
+        //print("appuie sur "+title);
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => CocktailDetail(title: title,)),
+        );
       },
       child: Padding(
         padding: const EdgeInsets.all(16.0),

@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.grey,
         primaryTextTheme: const TextTheme(
           headline1: TextStyle(color: Colors.white),
+          headline3: TextStyle(color: Colors.black),
           //headline1: TextStyle(color: Colors.white),
         ),
       ),
