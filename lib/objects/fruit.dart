@@ -17,6 +17,7 @@ class Fruit {
   final String genus;
   final String name;
   final int id;
+
   /*final String family;
   final String order;
   final double carbohydrates;
