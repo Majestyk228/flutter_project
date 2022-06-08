@@ -53,4 +53,9 @@ class Fruit {
       sugar: json['sugar'],*/
     );
   }
+
+  @override
+  String toString() {
+    return 'Fruit{genus: $genus, name: $name, id: $id}';
+  }
 }
