@@ -35,9 +35,9 @@ class CardCustom extends StatelessWidget {
                 ),
               ),
               const SizedBox(
-                height: 16,
+                height: 12,
               ),
-              Text(title),
+              Text(title,textAlign: TextAlign.center,overflow: TextOverflow.ellipsis),
             ],
           ),
           width: 131,
