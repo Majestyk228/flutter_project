@@ -4,8 +4,9 @@ import '../constants.dart' as Constants;
 
 class CocktailDetail extends StatefulWidget {
   final String title;
+  final String urlImage;
 
-  const CocktailDetail({Key? key, required this.title}) : super(key: key);
+  const CocktailDetail({Key? key, required this.title,required this.urlImage}) : super(key: key);
 
   @override
   State<CocktailDetail> createState() => _CocktailDetailState();
@@ -50,9 +51,10 @@ class _CocktailDetailState extends State<CocktailDetail> {
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Container(
-                        color: Colors.red,
                         height: 100,
                         width: 100,
+                        child: Image.network(widget.urlImage),
+
                       ),
                     ),
                     Expanded(

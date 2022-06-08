@@ -97,7 +97,7 @@ class _HomeWidgetState extends State<HomeWidget> {
               children: <Widget>[
 //répétion pour tester le wrap
                 if (compt < 1)
-                  CardCustom(
+                  const CardCustom(
                     title: "Loading",
                     urlImage:
                         "https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921",
@@ -108,7 +108,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                     urlImage: cocktail[0].strDrinkThumb,
                   ),
                 if (compt < 2)
-                  CardCustom(
+                  const CardCustom(
                     title: "Loading",
                     urlImage:
                         "https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921",
@@ -119,7 +119,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                     urlImage: cocktail[1].strDrinkThumb,
                   ),
                 if (compt < 3)
-                  CardCustom(
+                  const CardCustom(
                     title: "Loading",
                     urlImage:
                         "https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921",
@@ -130,7 +130,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                     urlImage: cocktail[2].strDrinkThumb,
                   ),
                 if (compt < 4)
-                  CardCustom(
+                  const CardCustom(
                     title: "Loading",
                     urlImage:
                         "https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921",

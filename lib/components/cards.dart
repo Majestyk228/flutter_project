@@ -15,7 +15,7 @@ class CardCustom extends StatelessWidget {
         //print("appuie sur "+title);
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => CocktailDetail(title: title,)),
+          MaterialPageRoute(builder: (context) => CocktailDetail(title: title,urlImage: urlImage,)),
         );
       },
       child: Padding(
