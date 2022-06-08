@@ -18,12 +18,15 @@ class HomeWidget extends StatefulWidget {
 
 class _HomeWidgetState extends State<HomeWidget> {
   var cocktail = [];
+  var compt = 0;
 
   @override
   void initState() {
     // TODO: implement initState
-
-    refreshCocktails();
+    for (var i = 0; i < 4; i++) {
+      refreshCocktails();
+      print(cocktail);
+    }
     super.initState();
   }
 
@@ -41,9 +44,8 @@ class _HomeWidgetState extends State<HomeWidget> {
     var drink = data['drinks'];
 
     //print(drink[0]['strDrinkThumb'].toString());
-    cocktail = [];
-    setState(() {
 
+    setState(() {
       Cocktail unCocktail = Cocktail(
         idDrink: drink[0]['idDrink'],
         strDrink: drink[0]['strDrink'],
@@ -64,6 +66,7 @@ class _HomeWidgetState extends State<HomeWidget> {
         strMeasure7: drink[0]['strMeasure7'],
       );
       cocktail.add(unCocktail);
+      compt++;
     });
   }
 
@@ -93,12 +96,22 @@ class _HomeWidgetState extends State<HomeWidget> {
             child: Wrap(
               children: <Widget>[
 //répétion pour tester le wrap
-                CardCustom(
-                  title: "Thor"),
-                
-                CardCustom(title: "Thor"),
-                CardCustom(title: "Iron Man"),
-                CardCustom(title: "Le Caillou"),
+                if (compt < 1)
+                  CardCustom(title: "Loading")
+                else
+                  CardCustom(title: cocktail[0].strDrink),
+                if (compt < 2)
+                  CardCustom(title: "Loading")
+                else
+                CardCustom(title: cocktail[1].strDrink),
+                if(compt<3)
+                  CardCustom(title: "Loading")
+                else
+                CardCustom(title: cocktail[2].strDrink),
+                if(compt<4)
+                  CardCustom(title: "Loading")
+                else
+                CardCustom(title: cocktail[3].strDrink),
               ],
             ),
           ),
