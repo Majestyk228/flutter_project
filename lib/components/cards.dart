@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:thefruityshaker/objects/cocktail.dart';
 
 import '../pages/cocktail_details_page.dart';
 
 class CardCustom extends StatelessWidget {
-  final String title;
-  final String urlImage;
+  final Cocktail cocktail;
 
-  const CardCustom({Key? key, required this.title, required this.urlImage})
-      : super(key: key);
+  const CardCustom({Key? key, required this.cocktail}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,8 +17,7 @@ class CardCustom extends StatelessWidget {
           context,
           MaterialPageRoute(
               builder: (context) => CocktailDetail(
-                    title: title,
-                    urlImage: urlImage,
+                    cocktail: cocktail,
                   )),
         );
       },
@@ -34,14 +32,16 @@ class CardCustom extends StatelessWidget {
                 child: Container(
                   height: 85,
                   width: 93,
-                  child: Image.network(urlImage),
+                  child: Image.network(
+                    cocktail.strDrinkThumb ?? "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Nuvola_apps_error.svg/1024px-Nuvola_apps_error.svg.png",
+                  ),
                 ),
               ),
               const SizedBox(
                 height: 12,
               ),
               Text(
-                title,
+                cocktail.strDrink ?? "LoadingFailed",
                 textAlign: TextAlign.center,
                 overflow: TextOverflow.ellipsis,
               ),

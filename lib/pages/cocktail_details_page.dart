@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:thefruityshaker/objects/cocktail.dart';
 import '../constants.dart' as Constants;
 
 class CocktailDetail extends StatefulWidget {
-  final String title;
-  final String urlImage;
+  final Cocktail cocktail;
 
-  const CocktailDetail({Key? key, required this.title,required this.urlImage}) : super(key: key);
+  const CocktailDetail({Key? key, required this.cocktail}) : super(key: key);
 
   @override
   State<CocktailDetail> createState() => _CocktailDetailState();
@@ -24,8 +24,11 @@ class _CocktailDetailState extends State<CocktailDetail> {
             Navigator.pop(context);
           },
         ),
-        title: Text(widget.title,textAlign: TextAlign.center,
-          overflow: TextOverflow.ellipsis,),
+        title: Text(
+          widget.cocktail.strDrink ?? "LoadingFailed",
+          textAlign: TextAlign.center,
+          overflow: TextOverflow.ellipsis,
+        ),
         titleTextStyle: Theme.of(context).textTheme.headline6,
         centerTitle: false,
         backgroundColor: const Color(0xffF6F5F4),
@@ -54,15 +57,14 @@ class _CocktailDetailState extends State<CocktailDetail> {
                       child: Container(
                         height: 100,
                         width: 100,
-                        child: Image.network(widget.urlImage),
-
+                        child: Image.network(widget.cocktail.strDrinkThumb??"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Nuvola_apps_error.svg/1024px-Nuvola_apps_error.svg.png"),
                       ),
                     ),
                     Expanded(
                       child: Padding(
                         padding: const EdgeInsets.all(16.0),
                         child: Text(
-                          widget.title,
+                          widget.cocktail.strDrink??"LoadingFailed",
                           style: Theme.of(context).textTheme.headline3,
                           textAlign: TextAlign.center,
                           overflow: TextOverflow.ellipsis,
@@ -80,19 +82,18 @@ class _CocktailDetailState extends State<CocktailDetail> {
                       Constants.INGREDIENT_TEXT,
                       style: Theme.of(context).textTheme.headline4,
                     ),
-                    ListView.builder(shrinkWrap: true,
+                    ListView.builder(
+                      shrinkWrap: true,
                       addRepaintBoundaries: false,
                       itemCount: 7,
                       itemBuilder: (context, index) {
-                        return Text("Test"
-                        );
+                        return Text("");
                         //return ListTile(title: Text(fruits[index]),);
-                      },)
-
+                      },
+                    )
                   ],
                 ),
               ),
-
             ],
           ),
         ),

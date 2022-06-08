@@ -97,48 +97,36 @@ class _HomeWidgetState extends State<HomeWidget> {
               children: <Widget>[
 //répétion pour tester le wrap
                 if (compt < 1)
-                  const CardCustom(
-                    title: "Loading",
-                    urlImage:
-                        "https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921",
+                   CardCustom(
+                    cocktail: Cocktail(strDrink: "Loading",strDrinkThumb:"https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921"),
                   )
                 else
                   CardCustom(
-                    title: cocktail[0].strDrink,
-                    urlImage: cocktail[0].strDrinkThumb,
+                    cocktail: cocktail[0],
                   ),
                 if (compt < 2)
-                  const CardCustom(
-                    title: "Loading",
-                    urlImage:
-                        "https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921",
+                   CardCustom(
+                    cocktail: Cocktail(strDrink: "Loading",strDrinkThumb:"https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921"),
                   )
                 else
                   CardCustom(
-                    title: cocktail[1].strDrink,
-                    urlImage: cocktail[1].strDrinkThumb,
+                    cocktail: cocktail[1],
                   ),
                 if (compt < 3)
-                  const CardCustom(
-                    title: "Loading",
-                    urlImage:
-                        "https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921",
+                   CardCustom(
+                     cocktail: Cocktail(strDrink: "Loading",strDrinkThumb:"https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921"),
                   )
                 else
                   CardCustom(
-                    title: cocktail[2].strDrink,
-                    urlImage: cocktail[2].strDrinkThumb,
+                    cocktail: cocktail[2],
                   ),
                 if (compt < 4)
-                  const CardCustom(
-                    title: "Loading",
-                    urlImage:
-                        "https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921",
+                   CardCustom(
+                    cocktail: Cocktail(strDrink: "Loading",strDrinkThumb:"https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921"),
                   )
                 else
                   CardCustom(
-                    title: cocktail[3].strDrink,
-                    urlImage: cocktail[3].strDrinkThumb,
+                    cocktail: cocktail[3],
                   ),
               ],
             ),
