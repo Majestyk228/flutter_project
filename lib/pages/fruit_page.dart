@@ -63,6 +63,13 @@ class _FruitWidgetState extends State<FruitWidget> {
                         scrollDirection: Axis.vertical,
                         child: Wrap(
                           children: [
+                            Align(
+                              child: Text(
+                                "Fruits",
+                                style: Theme.of(context).textTheme.headline2,
+                              ),
+                              alignment: Alignment.centerLeft,
+                            ),
                             SizedBox(
                               //height: MediaQuery.of(context).size.width,
                               height: 650,
