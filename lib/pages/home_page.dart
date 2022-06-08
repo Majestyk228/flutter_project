@@ -97,21 +97,49 @@ class _HomeWidgetState extends State<HomeWidget> {
               children: <Widget>[
 //répétion pour tester le wrap
                 if (compt < 1)
-                  CardCustom(title: "Loading")
+                  CardCustom(
+                    title: "Loading",
+                    urlImage:
+                        "https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921",
+                  )
                 else
-                  CardCustom(title: cocktail[0].strDrink),
+                  CardCustom(
+                    title: cocktail[0].strDrink,
+                    urlImage: cocktail[0].strDrinkThumb,
+                  ),
                 if (compt < 2)
-                  CardCustom(title: "Loading")
+                  CardCustom(
+                    title: "Loading",
+                    urlImage:
+                        "https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921",
+                  )
                 else
-                CardCustom(title: cocktail[1].strDrink),
-                if(compt<3)
-                  CardCustom(title: "Loading")
+                  CardCustom(
+                    title: cocktail[1].strDrink,
+                    urlImage: cocktail[1].strDrinkThumb,
+                  ),
+                if (compt < 3)
+                  CardCustom(
+                    title: "Loading",
+                    urlImage:
+                        "https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921",
+                  )
                 else
-                CardCustom(title: cocktail[2].strDrink),
-                if(compt<4)
-                  CardCustom(title: "Loading")
+                  CardCustom(
+                    title: cocktail[2].strDrink,
+                    urlImage: cocktail[2].strDrinkThumb,
+                  ),
+                if (compt < 4)
+                  CardCustom(
+                    title: "Loading",
+                    urlImage:
+                        "https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921",
+                  )
                 else
-                CardCustom(title: cocktail[3].strDrink),
+                  CardCustom(
+                    title: cocktail[3].strDrink,
+                    urlImage: cocktail[3].strDrinkThumb,
+                  ),
               ],
             ),
           ),

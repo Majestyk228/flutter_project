@@ -4,8 +4,9 @@ import '../pages/cocktail_details_page.dart';
 
 class CardCustom extends StatelessWidget {
   final String title;
+  final String urlImage;
 
-  const CardCustom({Key? key, required this.title}) : super(key: key);
+  const CardCustom({Key? key, required this.title,required this.urlImage}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -28,10 +29,7 @@ class CardCustom extends StatelessWidget {
                 child: Container(
                   height: 85,
                   width: 93,
-                  decoration: const BoxDecoration(
-                    color: Colors.grey,
-                    borderRadius: BorderRadius.all(Radius.circular(15)),
-                  ),
+                  child:Image.network(urlImage),
                 ),
               ),
               const SizedBox(
