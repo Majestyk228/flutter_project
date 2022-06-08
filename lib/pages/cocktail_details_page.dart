@@ -24,7 +24,8 @@ class _CocktailDetailState extends State<CocktailDetail> {
             Navigator.pop(context);
           },
         ),
-        title: Text(widget.title),
+        title: Text(widget.title,textAlign: TextAlign.center,
+          overflow: TextOverflow.ellipsis,),
         titleTextStyle: Theme.of(context).textTheme.headline6,
         centerTitle: false,
         backgroundColor: const Color(0xffF6F5F4),
@@ -63,7 +64,8 @@ class _CocktailDetailState extends State<CocktailDetail> {
                         child: Text(
                           widget.title,
                           style: Theme.of(context).textTheme.headline3,
-                          overflow: TextOverflow.clip,
+                          textAlign: TextAlign.center,
+                          overflow: TextOverflow.ellipsis,
                         ),
                       ),
                     ),
@@ -72,11 +74,25 @@ class _CocktailDetailState extends State<CocktailDetail> {
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 32, left: 16),
-                child: Text(
-                  Constants.INGREDIENT_TEXT,
-                  style: Theme.of(context).textTheme.headline4,
+                child: Column(
+                  children: [
+                    Text(
+                      Constants.INGREDIENT_TEXT,
+                      style: Theme.of(context).textTheme.headline4,
+                    ),
+                    ListView.builder(shrinkWrap: true,
+                      addRepaintBoundaries: false,
+                      itemCount: 7,
+                      itemBuilder: (context, index) {
+                        return Text("Test"
+                        );
+                        //return ListTile(title: Text(fruits[index]),);
+                      },)
+
+                  ],
                 ),
               ),
+
             ],
           ),
         ),

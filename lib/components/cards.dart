@@ -6,7 +6,8 @@ class CardCustom extends StatelessWidget {
   final String title;
   final String urlImage;
 
-  const CardCustom({Key? key, required this.title,required this.urlImage}) : super(key: key);
+  const CardCustom({Key? key, required this.title, required this.urlImage})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +16,11 @@ class CardCustom extends StatelessWidget {
         //print("appuie sur "+title);
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => CocktailDetail(title: title,urlImage: urlImage,)),
+          MaterialPageRoute(
+              builder: (context) => CocktailDetail(
+                    title: title,
+                    urlImage: urlImage,
+                  )),
         );
       },
       child: Padding(
@@ -29,13 +34,17 @@ class CardCustom extends StatelessWidget {
                 child: Container(
                   height: 85,
                   width: 93,
-                  child:Image.network(urlImage),
+                  child: Image.network(urlImage),
                 ),
               ),
               const SizedBox(
                 height: 12,
               ),
-              Text(title,textAlign: TextAlign.center,overflow: TextOverflow.ellipsis),
+              Text(
+                title,
+                textAlign: TextAlign.center,
+                overflow: TextOverflow.ellipsis,
+              ),
             ],
           ),
           width: 131,
