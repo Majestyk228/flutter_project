@@ -17,6 +17,7 @@ class _FruitWidgetState extends State<FruitWidget> {
   //liste dynamique des fruits données par l'API
   var fruits = [];
 
+
   @override
   void initState() {
     refreshFruits();
@@ -76,9 +77,7 @@ class _FruitWidgetState extends State<FruitWidget> {
                               //width: 150,
                               child: RefreshIndicator(
                                 onRefresh: refreshFruits,
-                                child: ListView.builder(
-                                  shrinkWrap: true,
-                                  addRepaintBoundaries: false,
+                                child: GridView.builder(
                                   itemCount: fruits.length,
                                   itemBuilder: (context, index) {
                                     return FruitCardCustom(
@@ -86,6 +85,10 @@ class _FruitWidgetState extends State<FruitWidget> {
                                     );
                                     //return ListTile(title: Text(fruits[index]),);
                                   },
+                                  gridDelegate:
+                                      const SliverGridDelegateWithMaxCrossAxisExtent(
+                                    maxCrossAxisExtent: 200,
+                                  ),
                                 ),
                               ),
                             ),
