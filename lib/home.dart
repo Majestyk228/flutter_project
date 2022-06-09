@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:thefruityshaker/pages/favorite_page.dart';
 
 //import 'package:thefruityshaker/components/cards.dart';
 import 'constants.dart' as Constants;
@@ -21,6 +22,8 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   int _selectedIndex = 0;
   late Widget child;
+  var favCocktails =[] ;
+  var favFruits =[];
 
   void _onItemTapped(int index) {
     setState(() {
@@ -45,6 +48,7 @@ class _HomeState extends State<Home> {
       case 3:
         child = AboutWidget();
         break;
+
     }
 
     return Scaffold(
@@ -65,6 +69,7 @@ class _HomeState extends State<Home> {
             icon: SvgPicture.asset("assets/icons/star_light.svg"),
             onPressed: () {
               // do something
+              child=FavoriteWidget();
             },
           )
         ],

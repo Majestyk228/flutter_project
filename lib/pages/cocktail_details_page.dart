@@ -14,27 +14,27 @@ class CocktailDetail extends StatefulWidget {
 
 class _CocktailDetailState extends State<CocktailDetail> {
   var listofingredients = [];
-  void initState() {
 
-    if(widget.cocktail.strIngredient1!=null){
+  void initState() {
+    if (widget.cocktail.strIngredient1 != null) {
       listofingredients.add(widget.cocktail.strIngredient1);
     }
-    if(widget.cocktail.strIngredient2!=null){
+    if (widget.cocktail.strIngredient2 != null) {
       listofingredients.add(widget.cocktail.strIngredient2);
     }
-    if(widget.cocktail.strIngredient3!=null){
+    if (widget.cocktail.strIngredient3 != null) {
       listofingredients.add(widget.cocktail.strIngredient3);
     }
-    if(widget.cocktail.strIngredient4!=null){
+    if (widget.cocktail.strIngredient4 != null) {
       listofingredients.add(widget.cocktail.strIngredient4);
     }
-    if(widget.cocktail.strIngredient5!=null){
+    if (widget.cocktail.strIngredient5 != null) {
       listofingredients.add(widget.cocktail.strIngredient5);
     }
-    if(widget.cocktail.strIngredient6!=null){
+    if (widget.cocktail.strIngredient6 != null) {
       listofingredients.add(widget.cocktail.strIngredient6);
     }
-    if(widget.cocktail.strIngredient7!=null){
+    if (widget.cocktail.strIngredient7 != null) {
       listofingredients.add(widget.cocktail.strIngredient7);
     }
     print(listofingredients);
