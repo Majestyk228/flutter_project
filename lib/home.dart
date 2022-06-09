@@ -23,7 +23,7 @@ class _HomeState extends State<Home> {
   int _selectedIndex = 0;
   late Widget child;
   var favCocktails =[] ;
-  var favFruits =[];
+  
 
   void _onItemTapped(int index) {
     setState(() {
@@ -49,6 +49,7 @@ class _HomeState extends State<Home> {
         child = AboutWidget();
         break;
 
+
     }
 
     return Scaffold(
@@ -69,7 +70,10 @@ class _HomeState extends State<Home> {
             icon: SvgPicture.asset("assets/icons/star_light.svg"),
             onPressed: () {
               // do something
-              child=FavoriteWidget();
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => FavoriteWidget()),
+              );
             },
           )
         ],
