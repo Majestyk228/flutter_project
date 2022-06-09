@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:thefruityshaker/globals.dart';
 import 'package:thefruityshaker/objects/cocktail.dart';
 import '../constants.dart' as Constants;
 
@@ -61,14 +62,7 @@ class _CocktailDetailState extends State<CocktailDetail> {
         titleTextStyle: Theme.of(context).textTheme.headline6,
         centerTitle: false,
         backgroundColor: const Color(0xffF6F5F4),
-        actions: <Widget>[
-          IconButton(
-            icon: SvgPicture.asset("assets/icons/star_light.svg"),
-            onPressed: () {
-              // do something
-            },
-          )
-        ],
+
       ),
       body: Container(
         child: Padding(
@@ -101,6 +95,26 @@ class _CocktailDetailState extends State<CocktailDetail> {
                         ),
                       ),
                     ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: IconButton(
+                        icon: SvgPicture.asset("assets/icons/star_light.svg"),
+                        onPressed: () {
+                          // do something
+                          favCocktails.add(widget.cocktail);
+                          favCocktails =favCocktails.toSet().toList();
+                          print(favCocktails);
+                        },
+                      )
+                    ),
+
                   ],
                 ),
               ),

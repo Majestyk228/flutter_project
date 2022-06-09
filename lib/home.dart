@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:thefruityshaker/pages/favorite_page.dart';
-
+import 'globals.dart';
 //import 'package:thefruityshaker/components/cards.dart';
 import 'constants.dart' as Constants;
 import 'pages/home_page.dart';
@@ -22,8 +22,11 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   int _selectedIndex = 0;
   late Widget child;
-  var favCocktails =[] ;
-  
+  void initState() {
+    print(favCocktails);
+    super.initState();
+  }
+
 
   void _onItemTapped(int index) {
     setState(() {
