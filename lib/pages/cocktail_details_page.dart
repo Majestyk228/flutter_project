@@ -13,6 +13,35 @@ class CocktailDetail extends StatefulWidget {
 }
 
 class _CocktailDetailState extends State<CocktailDetail> {
+  var listofingredients = [];
+  void initState() {
+
+    if(widget.cocktail.strIngredient1!=null){
+      listofingredients.add(widget.cocktail.strIngredient1);
+    }
+    if(widget.cocktail.strIngredient2!=null){
+      listofingredients.add(widget.cocktail.strIngredient2);
+    }
+    if(widget.cocktail.strIngredient3!=null){
+      listofingredients.add(widget.cocktail.strIngredient3);
+    }
+    if(widget.cocktail.strIngredient4!=null){
+      listofingredients.add(widget.cocktail.strIngredient4);
+    }
+    if(widget.cocktail.strIngredient5!=null){
+      listofingredients.add(widget.cocktail.strIngredient5);
+    }
+    if(widget.cocktail.strIngredient6!=null){
+      listofingredients.add(widget.cocktail.strIngredient6);
+    }
+    if(widget.cocktail.strIngredient7!=null){
+      listofingredients.add(widget.cocktail.strIngredient7);
+    }
+    print(listofingredients);
+
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -57,14 +86,15 @@ class _CocktailDetailState extends State<CocktailDetail> {
                       child: Container(
                         height: 100,
                         width: 100,
-                        child: Image.network(widget.cocktail.strDrinkThumb??"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Nuvola_apps_error.svg/1024px-Nuvola_apps_error.svg.png"),
+                        child: Image.network(widget.cocktail.strDrinkThumb ??
+                            "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Nuvola_apps_error.svg/1024px-Nuvola_apps_error.svg.png"),
                       ),
                     ),
                     Expanded(
                       child: Padding(
                         padding: const EdgeInsets.all(16.0),
                         child: Text(
-                          widget.cocktail.strDrink??"LoadingFailed",
+                          widget.cocktail.strDrink ?? "LoadingFailed",
                           style: Theme.of(context).textTheme.headline3,
                           textAlign: TextAlign.center,
                           overflow: TextOverflow.ellipsis,
@@ -85,10 +115,9 @@ class _CocktailDetailState extends State<CocktailDetail> {
                     ListView.builder(
                       shrinkWrap: true,
                       addRepaintBoundaries: false,
-                      itemCount: 7,
+                      itemCount: listofingredients.length,
                       itemBuilder: (context, index) {
-                        return Text("");
-                        //return ListTile(title: Text(fruits[index]),);
+                        return Text(listofingredients[index]);
                       },
                     )
                   ],
