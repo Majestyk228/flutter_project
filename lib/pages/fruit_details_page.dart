@@ -95,30 +95,35 @@ class _FruitDetailState extends State<FruitDetail> {
                     Row(
                       children: [
                         Text("Mes fesses 1"),
+                        Spacer(),
                         Text("Mes fesses 2"),
                       ],
                     ),
                     Row(
                       children: [
                         Text("Mes fesses 3"),
+                        Spacer(),
                         Text("Mes fesses 4"),
                       ],
                     ),
                     Row(
                       children: [
                         Text("Mes fesses 5"),
+                        Spacer(),
                         Text("Mes fesses 6"),
                       ],
                     ),
                     Row(
                       children: [
                         Text("Mes fesses 7"),
+                        Spacer(),
                         Text("Mes fesses 8"),
                       ],
                     ),
                     Row(
                       children: [
                         Text("Mes fesses 9"),
+                        Spacer(),
                         Text("Mes fesses 10"),
                       ],
                     ),
