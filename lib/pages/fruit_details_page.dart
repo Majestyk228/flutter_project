@@ -17,7 +17,6 @@ class FruitDetail extends StatefulWidget {
 class _FruitDetailState extends State<FruitDetail> {
   var fruit;
 
-
   @override
   void initState() {
     getFruit();
@@ -26,23 +25,19 @@ class _FruitDetailState extends State<FruitDetail> {
 
   Future getFruit() async {
     //endpoint
-    Uri uri = Uri.parse("https://www.fruityvice.com/api/fruit/"+widget.title);
+    Uri uri = Uri.parse("https://www.fruityvice.com/api/fruit/" + widget.title);
 
     //methode get du package HTTP
     final response = await http.get(uri);
 
     //parsing du JSON de la réponse
     var data = json.decode(response.body);
-    //this.fruits = [];
+
     setState(() {
-      //for (var i = 0; i < data.length; i++) {
-        //fruits.add(data[i]);
-      //}
       //récupération du fruit
       fruit = Fruit(genus: data["genus"], name: data["name"], id: data["id"]);
     });
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -55,18 +50,14 @@ class _FruitDetailState extends State<FruitDetail> {
             Navigator.pop(context);
           },
         ),
-        title: Text(widget.title),
+        title: Text(
+          widget.title,
+          textAlign: TextAlign.center,
+          overflow: TextOverflow.ellipsis,
+        ),
         titleTextStyle: Theme.of(context).textTheme.headline6,
         centerTitle: false,
         backgroundColor: const Color(0xffF6F5F4),
-        actions: <Widget>[
-          IconButton(
-            icon: SvgPicture.asset("assets/icons/star_light.svg"),
-            onPressed: () {
-              // do something
-            },
-          )
-        ],
       ),
       body: Container(
         child: Padding(
@@ -79,21 +70,14 @@ class _FruitDetailState extends State<FruitDetail> {
                 padding: const EdgeInsets.all(8.0),
                 child: Row(
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                        color: Colors.red,
-                        height: 100,
-                        width: 100,
-                      ),
-                    ),
                     Expanded(
                       child: Padding(
                         padding: const EdgeInsets.all(16.0),
                         child: Text(
-                          widget.title,
+                          this.fruit.name,
                           style: Theme.of(context).textTheme.headline3,
-                          overflow: TextOverflow.clip,
+                          textAlign: TextAlign.center,
+                          overflow: TextOverflow.ellipsis,
                         ),
                       ),
                     ),
@@ -102,9 +86,43 @@ class _FruitDetailState extends State<FruitDetail> {
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 32, left: 16),
-                child: Text(
-                  Constants.NUTRIMENT_TEXT,
-                  style: Theme.of(context).textTheme.headline4,
+                child: Column(
+                  children: [
+                    Text(
+                      Constants.NUTRIMENT_TEXT,
+                      style: Theme.of(context).textTheme.headline4,
+                    ),
+                    Row(
+                      children: [
+                        Text("Mes fesses 1"),
+                        Text("Mes fesses 2"),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Text("Mes fesses 3"),
+                        Text("Mes fesses 4"),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Text("Mes fesses 5"),
+                        Text("Mes fesses 6"),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Text("Mes fesses 7"),
+                        Text("Mes fesses 8"),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Text("Mes fesses 9"),
+                        Text("Mes fesses 10"),
+                      ],
+                    ),
+                  ],
                 ),
               ),
             ],

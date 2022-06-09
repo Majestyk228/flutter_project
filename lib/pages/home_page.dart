@@ -22,10 +22,8 @@ class _HomeWidgetState extends State<HomeWidget> {
 
   @override
   void initState() {
-    // TODO: implement initState
     for (var i = 0; i < 4; i++) {
       refreshCocktails();
-      print(cocktail);
     }
     super.initState();
   }
