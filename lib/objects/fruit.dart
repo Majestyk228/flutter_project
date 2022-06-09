@@ -18,25 +18,25 @@ class Fruit {
   final String name;
   final int id;
 
-  /*final String family;
+  final String family;
   final String order;
   final double carbohydrates;
   final double protein;
   final double fat;
   final double calories;
-  final double sugar;*/
+  final double sugar;
 
   const Fruit({
     required this.genus,
     required this.name,
     required this.id,
-    /*required this.family,
+    required this.family,
     required this.order,
     required this.carbohydrates,
     required this.protein,
     required this.fat,
     required this.calories,
-    required this.sugar,*/
+    required this.sugar,
   });
 
   factory Fruit.fromJson(Map<String, dynamic> json) {
@@ -44,13 +44,13 @@ class Fruit {
       genus: json['genus'],
       name: json['name'],
       id: json['id'],
-      /*family: json['family'],
+      family: json['family'],
       order: json['order'],
       carbohydrates: json['carbohydrates'],
       protein: json['protein'],
       fat: json['fat'],
       calories: json['calories'],
-      sugar: json['sugar'],*/
+      sugar: json['sugar'],
     );
   }
 

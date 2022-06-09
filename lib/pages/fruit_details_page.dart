@@ -32,10 +32,22 @@ class _FruitDetailState extends State<FruitDetail> {
 
     //parsing du JSON de la réponse
     var data = json.decode(response.body);
+    print(data["nutritions"]["carbohydrates"]);
 
     setState(() {
       //récupération du fruit
-      fruit = Fruit(genus: data["genus"], name: data["name"], id: data["id"]);
+      fruit = Fruit(
+        genus: data["genus"] ?? "N/C",
+        name: data["name"]?? "N/C",
+        id: data["id"]?? "N/C",
+        family: data["family"]?? "N/C",
+        order: data["order"]?? "N/C",
+        carbohydrates: data["nutritions"]["carbohydrates"] + 0.0 ?? 0.0,
+        protein: data["nutritions"]["protein"] + 0.0 ?? 0.0,
+        fat: data["nutritions"]["fat"] + 0.0 ?? 0,
+        calories: data["nutritions"]["calories"] + 0.0 ?? 0,
+        sugar: data["nutritions"]["sugar"] + 0.0 ?? 0,
+      );
     });
   }
 
@@ -74,7 +86,7 @@ class _FruitDetailState extends State<FruitDetail> {
                       child: Padding(
                         padding: const EdgeInsets.all(16.0),
                         child: Text(
-                          this.fruit.name,
+                          fruit.name,
                           style: Theme.of(context).textTheme.headline3,
                           textAlign: TextAlign.center,
                           overflow: TextOverflow.ellipsis,
@@ -88,44 +100,171 @@ class _FruitDetailState extends State<FruitDetail> {
                 padding: const EdgeInsets.only(top: 32, left: 16),
                 child: Column(
                   children: [
-                    Text(
-                      Constants.NUTRIMENT_TEXT,
-                      style: Theme.of(context).textTheme.headline4,
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 32),
+                      child: Text(
+                        Constants.NUTRIMENT_TEXT,
+                        style: Theme.of(context).textTheme.headline4,
+                      ),
                     ),
-                    Row(
-                      children: [
-                        Text("Mes fesses 1"),
-                        Spacer(),
-                        Text("Mes fesses 2"),
-                      ],
+                    Padding(
+                      padding: const EdgeInsets.only(top: 8,left: 8, bottom: 8, right: 16),
+                      child: Row(
+                        children: [
+                          Text(
+                            Constants.GENUS,
+                            style: Theme.of(context).textTheme.headline6,
+                          ),
+                          const Spacer(),
+                          Text(
+                            fruit.genus,
+                            style: Theme.of(context).textTheme.headline6,
+                          ),
+                        ],
+                      ),
                     ),
-                    Row(
-                      children: [
-                        Text("Mes fesses 3"),
-                        Spacer(),
-                        Text("Mes fesses 4"),
-                      ],
+                    Padding(
+                      padding: const EdgeInsets.only(top: 8,left: 8, bottom: 8, right: 16),
+                      child: Row(
+                        children: [
+                          Text(
+                            Constants.NAME,
+                            style: Theme.of(context).textTheme.headline6,
+                          ),
+                          const Spacer(),
+                          Text(
+                            fruit.name,
+                            style: Theme.of(context).textTheme.headline6,
+                          ),
+                        ],
+                      ),
                     ),
-                    Row(
-                      children: [
-                        Text("Mes fesses 5"),
-                        Spacer(),
-                        Text("Mes fesses 6"),
-                      ],
+                    Padding(
+                      padding: const EdgeInsets.only(top: 8,left: 8, bottom: 8, right: 16),
+                      child: Row(
+                        children: [
+                          Text(
+                            Constants.ID,
+                            style: Theme.of(context).textTheme.headline6,
+                          ),
+                          const Spacer(),
+                          Text(
+                            fruit.id.toString(),
+                            style: Theme.of(context).textTheme.headline6,
+                          ),
+                        ],
+                      ),
                     ),
-                    Row(
-                      children: [
-                        Text("Mes fesses 7"),
-                        Spacer(),
-                        Text("Mes fesses 8"),
-                      ],
+                    Padding(
+                      padding: const EdgeInsets.only(top: 8,left: 8, bottom: 8, right: 16),
+                      child: Row(
+                        children: [
+                          Text(
+                            Constants.FAMILY,
+                            style: Theme.of(context).textTheme.headline6,
+                          ),
+                          const Spacer(),
+                          Text(
+                            fruit.family,
+                            style: Theme.of(context).textTheme.headline6,
+                          ),
+                        ],
+                      ),
                     ),
-                    Row(
-                      children: [
-                        Text("Mes fesses 9"),
-                        Spacer(),
-                        Text("Mes fesses 10"),
-                      ],
+                    Padding(
+                      padding: const EdgeInsets.only(top: 8,left: 8, bottom: 8, right: 16),
+                      child: Row(
+                        children: [
+                          Text(
+                            Constants.ORDER,
+                            style: Theme.of(context).textTheme.headline6,
+                          ),
+                          const Spacer(),
+                          Text(
+                            fruit.order,
+                            style: Theme.of(context).textTheme.headline6,
+                          ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 8,left: 8, bottom: 8, right: 16),
+                      child: Row(
+                        children: [
+                          Text(
+                            Constants.CARBO,
+                            style: Theme.of(context).textTheme.headline6,
+                          ),
+                          const Spacer(),
+                          Text(
+                            fruit.carbohydrates.toString() + "g/100g",
+                            style: Theme.of(context).textTheme.headline6,
+                          ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 8,left: 8, bottom: 8, right: 16),
+                      child: Row(
+                        children: [
+                          Text(
+                            Constants.PROTEINS,
+                            style: Theme.of(context).textTheme.headline6,
+                          ),
+                          const Spacer(),
+                          Text(
+                            fruit.protein.toString() + "g/100g",
+                            style: Theme.of(context).textTheme.headline6,
+                          ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 8,left: 8, bottom: 8, right: 16),
+                      child: Row(
+                        children: [
+                          Text(
+                            Constants.FAT,
+                            style: Theme.of(context).textTheme.headline6,
+                          ),
+                          const Spacer(),
+                          Text(
+                            fruit.fat.toString() + "g/100g",
+                            style: Theme.of(context).textTheme.headline6,
+                          ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 8,left: 8, bottom: 8, right: 16),
+                      child: Row(
+                        children: [
+                          Text(
+                            Constants.CALORIES,
+                            style: Theme.of(context).textTheme.headline6,
+                          ),
+                          const Spacer(),
+                          Text(
+                            fruit.calories.toString() + "g/100g",
+                            style: Theme.of(context).textTheme.headline6,
+                          ),
+                        ],
+                      ),
+                    ),Padding(
+                      padding: const EdgeInsets.only(top: 8,left: 8, bottom: 8, right: 16),
+                      child: Row(
+                        children: [
+                          Text(
+                            Constants.SUGAR,
+                            style: Theme.of(context).textTheme.headline6,
+                          ),
+                          const Spacer(),
+                          Text(
+                            fruit.sugar.toString() + "g/100g",
+                            style: Theme.of(context).textTheme.headline6,
+                          ),
+                        ],
+                      ),
                     ),
                   ],
                 ),
