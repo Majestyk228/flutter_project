@@ -1,3 +1,6 @@
+// APP TITLE
+const String APP_TITLE = "The Fruity Shaker";
+
 // HOME
 const String WELCOME_MESSAGE="Bienvenue dans l'application Fruity Shaker !";
 const String SECONDARY_WELCOME="Voici la sélection de cocktail aléatoire !";

@@ -3,7 +3,6 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:thefruityshaker/components/cards.dart';
-import 'package:thefruityshaker/components/fruit_cards.dart';
 
 import '../objects/cocktail.dart';
 class CocktailWidget extends StatefulWidget {
@@ -60,7 +59,6 @@ class _CocktailWidgetState extends State<CocktailWidget> {
       }
 
     });
-    print(cocktails[0]);
   }
   @override
   Widget build(BuildContext context) {

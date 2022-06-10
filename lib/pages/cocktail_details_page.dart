@@ -38,7 +38,6 @@ class _CocktailDetailState extends State<CocktailDetail> {
     if (widget.cocktail.strIngredient7 != null) {
       listofingredients.add(widget.cocktail.strIngredient7);
     }
-    print(listofingredients);
 
     super.initState();
   }
@@ -110,7 +109,6 @@ class _CocktailDetailState extends State<CocktailDetail> {
                           // do something
                           favCocktails.add(widget.cocktail);
                           favCocktails =favCocktails.toSet().toList();
-                          print(favCocktails);
                         },
                       )
                     ),

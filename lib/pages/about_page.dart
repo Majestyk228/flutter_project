@@ -15,7 +15,6 @@ class AboutWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Container(
-        //margin: EdgeInsets.all(16),
         alignment: Alignment.center,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -126,8 +125,9 @@ class AboutWidget extends StatelessWidget {
                   children: const <TextSpan>[
                     TextSpan(text: Constants.ANNOUNCE_SURPRISE1),
                     TextSpan(
-                        text: Constants.ANNOUNCE_SURPRISE2,
-                        style: TextStyle(fontWeight: FontWeight.bold)),
+                      text: Constants.ANNOUNCE_SURPRISE2,
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
                     TextSpan(text: Constants.ANNOUNCE_SURPRISE3),
                   ],
                 ),
@@ -144,7 +144,9 @@ class AboutWidget extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const PotitChat()),
+                    MaterialPageRoute(
+                      builder: (context) => const PotitChat(),
+                    ),
                   );
                 },
                 child: const Text(

@@ -41,8 +41,6 @@ class _HomeWidgetState extends State<HomeWidget> {
     var data = json.decode(response.body);
     var drink = data['drinks'];
 
-    //print(drink[0]['strDrinkThumb'].toString());
-
     setState(() {
       Cocktail unCocktail = Cocktail(
         idDrink: drink[0]['idDrink'],

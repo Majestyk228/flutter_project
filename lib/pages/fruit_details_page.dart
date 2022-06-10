@@ -32,7 +32,6 @@ class _FruitDetailState extends State<FruitDetail> {
 
     //parsing du JSON de la réponse
     var data = json.decode(response.body);
-    print(data["nutritions"]["carbohydrates"]);
 
     setState(() {
       //récupération du fruit
@@ -248,7 +247,7 @@ class _FruitDetailState extends State<FruitDetail> {
                           const Spacer(),
                           Text(
                             //fruit.carbohydrates!=null ? fruit.carbohydrates.toString() + "g/100g" : "N/A",
-                            fruit?.calories!=null ? fruit!.calories.toString() + "g/100g" : "N/A g/100g",
+                            fruit?.calories!=null ? fruit!.calories.toString() + "kcal/100g" : "N/A kcal/100g",
                             style: Theme.of(context).textTheme.headline6,
                           ),
                         ],

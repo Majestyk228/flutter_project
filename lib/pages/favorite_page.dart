@@ -30,7 +30,7 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
             Navigator.pop(context);
           },
         ),
-        title: Text(
+        title: const Text(
            "Favoris",
           textAlign: TextAlign.center,
           overflow: TextOverflow.ellipsis,

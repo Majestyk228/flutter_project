@@ -12,13 +12,13 @@ class CardCustom extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        //print("appuie sur "+title);
         Navigator.push(
           context,
           MaterialPageRoute(
-              builder: (context) => CocktailDetail(
-                    cocktail: cocktail,
-                  )),
+            builder: (context) => CocktailDetail(
+              cocktail: cocktail,
+            ),
+          ),
         );
       },
       child: Padding(
@@ -33,7 +33,8 @@ class CardCustom extends StatelessWidget {
                   height: 85,
                   width: 93,
                   child: Image.network(
-                    cocktail.strDrinkThumb ?? "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Nuvola_apps_error.svg/1024px-Nuvola_apps_error.svg.png",
+                    cocktail.strDrinkThumb ??
+                        "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Nuvola_apps_error.svg/1024px-Nuvola_apps_error.svg.png",
                   ),
                 ),
               ),

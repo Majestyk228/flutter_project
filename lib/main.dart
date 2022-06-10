@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import '../constants.dart' as Constants;
 
 import 'home.dart';
 
@@ -15,13 +16,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: Constants.APP_TITLE,
       theme: ThemeData(
         primarySwatch: Colors.grey,
         primaryTextTheme: const TextTheme(
           headline1: TextStyle(color: Colors.white),
           headline3: TextStyle(color: Colors.black),
-          //headline1: TextStyle(color: Colors.white),
         ),
       ),
       home: const MyHomePage(title: 'The Fruity Shaker'),

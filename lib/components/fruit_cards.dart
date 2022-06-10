@@ -11,18 +11,24 @@ class FruitCardCustom extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        //print("appuie sur "+title);
         //navigation vers la page enfant
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => FruitDetail(title: title,)),
+          MaterialPageRoute(
+            builder: (context) => FruitDetail(
+              title: title,
+            ),
+          ),
         );
       },
       child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Container(
           child: Center(
-            child: Text(title),
+            child: Text(
+              title,
+              style: Theme.of(context).textTheme.headline5,
+            ),
           ),
           width: 131,
           height: 148,

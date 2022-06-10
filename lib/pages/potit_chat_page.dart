@@ -42,8 +42,6 @@ class _PotitChatState extends State<PotitChat> {
       ),
       body: Container(
         child: Column(
-          //mainAxisAlignment: MainAxisAlignment.center,
-          //crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             const Text(
@@ -61,10 +59,6 @@ class _PotitChatState extends State<PotitChat> {
                 image: NetworkImage('https://http.cat/' +
                     Constants.HTTP_CODES[randomInt].toString()),
                 placeholder: AssetImage("assets/images/reload-cat.gif"),
-                /*child: Image.network(
-                'https://http.cat/' + Constants.HTTP_CODES[randomInt].toString(),
-                fit: BoxFit.contain,
-              ),*/
               ),
             ),
           ],
@@ -76,6 +70,6 @@ class _PotitChatState extends State<PotitChat> {
   void getRandomInt() {
     Random random = new Random();
     randomInt =
-        random.nextInt(Constants.HTTP_CODES.length); // from 0 upto 99 included
+        random.nextInt(Constants.HTTP_CODES.length);
   }
 }
