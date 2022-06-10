@@ -15,7 +15,7 @@ class FruitDetail extends StatefulWidget {
 }
 
 class _FruitDetailState extends State<FruitDetail> {
-  var fruit;
+  Fruit? fruit;
 
   @override
   void initState() {
@@ -86,7 +86,8 @@ class _FruitDetailState extends State<FruitDetail> {
                       child: Padding(
                         padding: const EdgeInsets.all(16.0),
                         child: Text(
-                          fruit.name,
+                          //fruit.carbohydrates!=null ? fruit.carbohydrates.toString() + "g/100g" : "N/A",
+                          fruit?.name ?? widget.title,
                           style: Theme.of(context).textTheme.headline3,
                           textAlign: TextAlign.center,
                           overflow: TextOverflow.ellipsis,
@@ -117,7 +118,7 @@ class _FruitDetailState extends State<FruitDetail> {
                           ),
                           const Spacer(),
                           Text(
-                            fruit.genus,
+                            fruit?.genus ?? "N/A",
                             style: Theme.of(context).textTheme.headline6,
                           ),
                         ],
@@ -133,7 +134,7 @@ class _FruitDetailState extends State<FruitDetail> {
                           ),
                           const Spacer(),
                           Text(
-                            fruit.name,
+                            fruit?.name ?? "N/A",
                             style: Theme.of(context).textTheme.headline6,
                           ),
                         ],
@@ -149,7 +150,7 @@ class _FruitDetailState extends State<FruitDetail> {
                           ),
                           const Spacer(),
                           Text(
-                            fruit.id.toString(),
+                            fruit?.id!=null ? fruit!.id.toString() : "N/A",
                             style: Theme.of(context).textTheme.headline6,
                           ),
                         ],
@@ -165,7 +166,7 @@ class _FruitDetailState extends State<FruitDetail> {
                           ),
                           const Spacer(),
                           Text(
-                            fruit.family,
+                            fruit?.family ?? "N/A",
                             style: Theme.of(context).textTheme.headline6,
                           ),
                         ],
@@ -181,7 +182,7 @@ class _FruitDetailState extends State<FruitDetail> {
                           ),
                           const Spacer(),
                           Text(
-                            fruit.order,
+                            fruit?.order ?? "N/A",
                             style: Theme.of(context).textTheme.headline6,
                           ),
                         ],
@@ -197,7 +198,7 @@ class _FruitDetailState extends State<FruitDetail> {
                           ),
                           const Spacer(),
                           Text(
-                            fruit.carbohydrates.toString() + "g/100g",
+                              fruit?.carbohydrates!=null ? fruit!.carbohydrates.toString()+"g/100g" : "N/A g/100g",
                             style: Theme.of(context).textTheme.headline6,
                           ),
                         ],
@@ -213,7 +214,7 @@ class _FruitDetailState extends State<FruitDetail> {
                           ),
                           const Spacer(),
                           Text(
-                            fruit.protein.toString() + "g/100g",
+                            fruit?.protein!=null ? fruit!.protein.toString() + "g/100g" : "N/A g/100g",
                             style: Theme.of(context).textTheme.headline6,
                           ),
                         ],
@@ -229,7 +230,8 @@ class _FruitDetailState extends State<FruitDetail> {
                           ),
                           const Spacer(),
                           Text(
-                            fruit.fat.toString() + "g/100g",
+                            //fruit.carbohydrates!=null ? fruit.carbohydrates.toString() + "g/100g" : "N/A",
+                            fruit?.fat!=null ? fruit!.fat.toString() + "g/100g" : "N/A g/100g",
                             style: Theme.of(context).textTheme.headline6,
                           ),
                         ],
@@ -245,7 +247,8 @@ class _FruitDetailState extends State<FruitDetail> {
                           ),
                           const Spacer(),
                           Text(
-                            fruit.calories.toString() + "g/100g",
+                            //fruit.carbohydrates!=null ? fruit.carbohydrates.toString() + "g/100g" : "N/A",
+                            fruit?.calories!=null ? fruit!.calories.toString() + "g/100g" : "N/A g/100g",
                             style: Theme.of(context).textTheme.headline6,
                           ),
                         ],
@@ -260,7 +263,8 @@ class _FruitDetailState extends State<FruitDetail> {
                           ),
                           const Spacer(),
                           Text(
-                            fruit.sugar.toString() + "g/100g",
+                            //fruit.carbohydrates!=null ? fruit.carbohydrates.toString() + "g/100g" : "N/A",
+                            fruit?.sugar!=null ? fruit!.sugar.toString() + "g/100g":"N/A g/100g",
                             style: Theme.of(context).textTheme.headline6,
                           ),
                         ],

@@ -1,18 +1,3 @@
-/*{
-  "genus":"Pyrus",
-  "name":"Pear",
-  "id":4,
-  "family":"Rosaceae",
-  "order":"Rosales",
-  "nutritions":{
-    "carbohydrates":15,
-    "protein":0.4,
-    "fat":0.1,
-    "calories":57,
-    "sugar":10
-  }
-}*/
-
 class Fruit {
   final String genus;
   final String name;
@@ -56,6 +41,6 @@ class Fruit {
 
   @override
   String toString() {
-    return 'Fruit{genus: $genus, name: $name, id: $id}';
+    return 'Fruit{genus: $genus, name: $name, id: $id, family: $family, order: $order, carbohydrates: $carbohydrates, protein: $protein, fat: $fat, calories: $calories, sugar: $sugar}';
   }
 }
