@@ -32,6 +32,7 @@ class DevCard extends StatelessWidget {
               pseudo,
               textAlign: TextAlign.center,
               overflow: TextOverflow.visible,
+              style: TextStyle(fontWeight: FontWeight.bold),
             ),
           ],
         ),
